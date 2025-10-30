@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Preços em Dólar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>💵 Calculadora de Preços</h1>
+                <p class="subtitle">Converta valores em dólar com cotação personalizada</p>
+            </div>
+
+            <div class="cotacao-info">
+                <div class="info-item editable">
+                    <span class="label">Cotação Atual:</span>
+                    <div class="value-input">
+                        <span class="currency-prefix">R$</span>
+                        <input 
+                            type="number" 
+                            id="cotacaoAtual" 
+                            value="5.36" 
+                            step="0.01" 
+                            min="0"
+                            class="cotacao-input"
+                        >
+                    </div>
+                </div>
+                <div class="info-item editable">
+                    <span class="label">Cotação Máxima:</span>
+                    <div class="value-input">
+                        <span class="currency-prefix">R$</span>
+                        <input 
+                            type="number" 
+                            id="cotacaoMax" 
+                            value="6.36" 
+                            step="0.01" 
+                            min="0"
+                            class="cotacao-input"
+                        >
+                    </div>
+                </div>
+                <div class="info-item editable">
+                    <span class="label">Cotação Mínima:</span>
+                    <div class="value-input">
+                        <span class="currency-prefix">R$</span>
+                        <input 
+                            type="number" 
+                            id="cotacaoMin" 
+                            value="4.86" 
+                            step="0.01" 
+                            min="0"
+                            class="cotacao-input"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <form id="calculadoraForm">
+                <div class="input-group">
+                    <label for="valorDolar">Valor do Produto (USD)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input 
+                            type="number" 
+                            id="valorDolar" 
+                            placeholder="0.00" 
+                            step="0.01" 
+                            min="0"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-calcular">
+                    Calcular Preços
+                </button>
+            </form>
+
+            <div id="resultados" class="resultados hidden">
+                <h2>Resultados</h2>
+                
+                <div class="resultado-card atual">
+                    <div class="resultado-icon">📊</div>
+                    <div class="resultado-content">
+                        <span class="resultado-label">Preço Atual</span>
+                        <span class="resultado-valor" id="precoAtual">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="resultado-card max">
+                    <div class="resultado-icon">📈</div>
+                    <div class="resultado-content">
+                        <span class="resultado-label">Preço Máximo</span>
+                        <span class="resultado-valor" id="precoMax">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="resultado-card min">
+                    <div class="resultado-icon">📉</div>
+                    <div class="resultado-content">
+                        <span class="resultado-label">Preço Mínimo</span>
+                        <span class="resultado-valor" id="precoMin">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="resultado-card media">
+                    <div class="resultado-icon">🎯</div>
+                    <div class="resultado-content">
+                        <span class="resultado-label">Média Recomendada</span>
+                        <span class="resultado-valor" id="media">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
